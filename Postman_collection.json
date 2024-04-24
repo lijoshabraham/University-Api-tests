@@ -1,0 +1,545 @@
+{
+	"info": {
+		"_postman_id": "f47e0b3a-1eb5-4bf8-b904-44f9376c3f96",
+		"name": "University API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9582824"
+	},
+	"item": [
+		{
+			"name": "Happy Path Tests",
+			"item": [
+				{
+					"name": "Fetch University Information - Valid University Name",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "[f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e]",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:4010/university?universityName=University of Toronto",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4010",
+							"path": [
+								"university"
+							],
+							"query": [
+								{
+									"key": "universityName",
+									"value": "University of Toronto"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New University - Valid Request Body",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "[f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e]",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"UniversityID\": 123,\r\n  \"UniversityName\": \"University of Windsor\",\r\n  \"UniversityLocation\": \"Windsor, Ontario, Canada\",\r\n  \"UniversityFounded\": 1857,\r\n  \"KeyPeople\": [\r\n    {\r\n      \"name\": \"John Doe\",\r\n      \"age\": 50,\r\n      \"title\": \"President\"\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4010/university",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4010",
+							"path": [
+								"university"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete University - Valid University Name",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "[f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e]",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:4010/university?universityName=University of Toronto",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4010",
+							"path": [
+								"university"
+							],
+							"query": [
+								{
+									"key": "universityName",
+									"value": "University of Toronto"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch University by ID",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "[f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e]",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:4010/university978",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4010",
+							"path": [
+								"university978"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update university information - valid university ID",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "[f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e]",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"UniversityID\": 978,\r\n  \"UniversityName\": \"University of Waterloo\",\r\n  \"UniversityLocation\": \"Waterloo, Ontario\",\r\n  \"UniversityFounded\": 2000,\r\n  \"KeyPeople\": [\r\n    {\r\n      \"name\": \"Lijosh Abraham\",\r\n      \"age\": 50,\r\n      \"title\": \"Director\"\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4010/university978",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4010",
+							"path": [
+								"university978"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all universities",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:4010/universities",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4010",
+							"path": [
+								"universities"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "api_key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/universities",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"universities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"UniversityID\": \"<integer>\",\n    \"UniversityName\": \"<string>\",\n    \"UniversityLocation\": \"<string>\",\n    \"UniversityFounded\": \"<integer>\",\n    \"KeyPeople\": [\n      {\n        \"name\": \"<string>\",\n        \"age\": \"<integer>\",\n        \"title\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"age\": \"<integer>\",\n        \"title\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"UniversityID\": \"<integer>\",\n    \"UniversityName\": \"<string>\",\n    \"UniversityLocation\": \"<string>\",\n    \"UniversityFounded\": \"<integer>\",\n    \"KeyPeople\": [\n      {\n        \"name\": \"<string>\",\n        \"age\": \"<integer>\",\n        \"title\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"age\": \"<integer>\",\n        \"title\": \"<string>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Error Handling Tests",
+			"item": [
+				{
+					"name": "Test 422 Invalid Request",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "[f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e]",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UniversityID\": \"ABC\", \r\n    \"UniversityName\": \"\",  \r\n    \"UniversityLocation\": \"Toronto, Ontario, Canada\",\r\n    \"UniversityFounded\": \"1965\",  \r\n    \"KeyPeople\": [\r\n        {\r\n            \"name\": \"John Smith\",\r\n            \"age\": \"45\",\r\n            \"title\": \"President\"\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4010/university",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4010",
+							"path": [
+								"university"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 422 - Delete University",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "[f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e]",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:4010/university",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4010",
+							"path": [
+								"university"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 401 - Missing API key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:4010/universities",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4010",
+							"path": [
+								"universities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 404 - invalid URL",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "abcd",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:4010/universities/abcd",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4010",
+							"path": [
+								"universities",
+								"abcd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
